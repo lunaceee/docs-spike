@@ -28,16 +28,22 @@ module.exports = {
   },
   themeConfig: {
     displayAllHeaders: true,
-    sidebar: {
-      "/foo/": {
-        title: "Foo",
-        collapasble: false,
-        children: ["", "subpage-1a-a", "subpage-1a-b"]
+    sidebar: [
+      {
+        title: "root",
+        sidebarDepth: 2,
+        children: [
+          "root/nested-footer",
+          {
+            title: "root/foo",
+            sidebarDepth: 2,
+            children: ["root/foo/foo-footer"]
+          }
+        ]
       }
-    }
+    ]
   },
   plugins: [
-    ["@vuepress/back-to-top", true],
     [
       "@vuepress/active-header-links",
       {
