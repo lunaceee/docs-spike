@@ -28,19 +28,13 @@ module.exports = {
   },
   themeConfig: {
     displayAllHeaders: true,
-    sidebar: [
-      {
-        title: "Topic Group 1",
-        collapsable: true,
-        sidebarDepth: 2,
-        children: ["/page-1b", "/page-1c"]
-      },
-      {
-        title: "Topic Group 2",
-        collapsable: false,
-        children: ["/page-2a", "/page-2b", "/page-2c"]
+    sidebar: {
+      "/foo/": {
+        title: "Foo",
+        collapasble: false,
+        children: ["", "subpage-1a-a", "subpage-1a-b"]
       }
-    ]
+    }
   },
   plugins: [
     ["@vuepress/back-to-top", true],
